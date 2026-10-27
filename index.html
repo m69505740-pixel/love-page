@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>بحبك ❤️</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;
+    font-family:Tahoma,Arial,sans-serif;color:#fff;
+    background:radial-gradient(circle at top,#5d173d 0,#24102d 48%,#100d20 100%);}
+  .card{width:min(100%,390px);text-align:center;padding:34px 24px;border:1px solid #ffffff30;
+    border-radius:28px;background:#ffffff10;box-shadow:0 20px 70px #0005;backdrop-filter:blur(10px)}
+  .heart{font-size:54px;animation:pulse 1.5s infinite}
+  h1{font-size:38px;margin:10px 0 8px;color:#ffb4d1}
+  p{color:#f4dce8;line-height:1.8}
+  input,button{width:100%;border:0;border-radius:14px;padding:15px;font:inherit;margin-top:12px}
+  input{text-align:center;background:#fff;color:#251326;outline:2px solid transparent}
+  input:focus{outline-color:#ff8fbe}
+  button{background:#ff5c9b;color:#fff;font-weight:bold;cursor:pointer}
+  button:hover{background:#ff78ad}
+  #message{display:none;margin-top:22px;padding:18px;border-radius:18px;background:#ffffff12;color:#ffe0ec;line-height:1.9}
+  .small{font-size:13px;color:#d8bfd0}
+  @keyframes pulse{50%{transform:scale(1.12)}}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="heart">❤️</div>
+  <h1>بحبك</h1>
+  <p>في حاجة حلوة مستنياكي… اكتبي الباسورد 💌</p>
+  <form id="login">
+    <input id="password" type="password" placeholder="اكتبي الباسورد هنا" autocomplete="off" aria-label="الباسورد">
+    <button type="submit">افتحي المفاجأة 💗</button>
+  </form>
+  <p id="error" class="small" role="status"></p>
+  <div id="message">❤️ بحبك أوي ❤️<br>وجودك في حياتي بيخلّي كل حاجة أحلى، ودي رسالة صغيرة تفكّرك إنك غالية عندي جدًا 💖✨</div>
+</main>
+<script>
+document.getElementById('login').addEventListener('submit', function(e){
+  e.preventDefault();
+  const value = document.getElementById('password').value.trim();
+  if(value === 'بحبك'){
+    document.getElementById('message').style.display = 'block';
+    document.getElementById('error').textContent = '';
+    document.getElementById('login').style.display = 'none';
+  } else {
+    document.getElementById('error').textContent = 'الباسورد مش صح، جرّبي تاني ❤️';
+  }
+});
+</script>
+</body>
+</html>
